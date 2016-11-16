@@ -1,0 +1,42 @@
+<div class="small-12 columns"  >
+			Top Ten List: <button type="button" class="button" ng-click="exportTopTenList();" >Export</button><P>
+			<div ng-show="topTenList.title" class="topTenName">
+				<span class="topTenName">{{topTenList.title}}</span>
+			</div>
+			<div ng-hide="topTenList.title">
+				<span class="topTenName">
+					<input type="text" ng-model="topTenNameInput"  placeholder="Enter a name for your top ten list">
+					<button type="button" class="button" ng-click="nameTopTenList();" >Name Top 10 List</button>
+				</span>
+			</div>
+			
+			<div ng-show="topTenList.songs == null || topTenList.songs.length == 0">
+				No Songs.
+			</div>
+			
+			<div ng-repeat="track in topTenList.songs">
+				<div class="row">
+					<div class="small-6 columns"  >
+						<div ng-show="track.customImage">
+							<span class="albumArt" style="background-image: url('{{track.customImage}}')">
+								{{$index + 1}}
+							</span>
+						</div>
+					</div>
+					<div class="small-6 columns"  >
+						<div class="songTitle">{{track.name}}</div>
+						<div class="songAlbum">{{track.album}}</div>
+						<div class="songArtist">{{track.artist}}</div>
+						Note:
+						<div ng-show="track.note">
+							{{track.note}}
+						</div>
+						
+					</div>
+				</div>
+					<div ng-hide="track.customImage && track.note">
+						<button type="button" class="button" ng-click="editTrackInfo($index);" >Edit Track Info</button>
+					</div>
+				<hr/>
+			</div>
+		</div>

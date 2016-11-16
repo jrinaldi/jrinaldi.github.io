@@ -1,0 +1,45 @@
+<div class="small-12 columns"  >
+			Top Ten List:<P>
+			<div ng-show="topTenList.name">
+				<span class="topTenName">{{topTenList.name}}</span>
+			</div>
+			<div ng-hide="topTenList.name">
+				<span class="topTenName">
+					<input type="text" ng-model="topTenNameInput"  placeholder="Enter a name for your top ten list">
+					<button type="button" class="button" ng-click="nameTopTenList();" >Name Top 10 List</button>
+				</span>
+			</div>
+	
+			
+
+				<div class="row">
+					<div class="small-6 columns"  >
+						<div ng-show="topTenList.songs[trackIndex].customImage">
+							<span class="albumArt" style="background-image: url('{{topTenList.songs[trackIndex].customImage}}')">
+								
+							</span>
+						</div>
+						<div ng-hide="topTenList.songs[trackIndex].customImage">
+							<input type="text" ng-model="customImageInput"  placeholder="Enter a custom url for image">
+							<button type="button" class="button" ng-click="addCustomImageUrl();" >Add Custom Image</button>
+						</div>
+					</div>
+					<div class="small-6 columns"  >
+						<div class="songTitle">{{topTenList.songs[trackIndex].name}}</div>
+						<div class="songAlbum">{{topTenList.songs[trackIndex].album}}</div>
+						<div class="songArtist">{{topTenList.songs[trackIndex].songs[trackIndex].artist}}</div>
+						Note:
+						<div ng-hide="topTenList.songs[trackIndex].note">
+							<span class="topTenName">
+								<input type="text" ng-model="trackNoteInput"  placeholder="Enter a note for this track">
+								<button type="button" class="button" ng-click="addNote();" >Add Note</button>
+							</span>
+						</div>
+						<div ng-show="topTenList.songs[trackIndex].note">
+							{{topTenList.songs[trackIndex].note}}
+						</div>
+					</div>
+				</div>
+				<hr/>
+
+		</div>

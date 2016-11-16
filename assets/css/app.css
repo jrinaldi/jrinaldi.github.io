@@ -1,0 +1,129 @@
+body, html {
+  height: 100%;
+  background-image: url('../img/dark-textures_405869.jpg');
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 2px;
+	margin: 0.5rem auto;
+}
+
+ .ng-hide {
+	visibility: hidden !important;
+}
+
+
+#titleOfPage {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 34px;
+	margin: auto;
+	 text-align: center;
+	 padding: 10px;
+}
+
+#welcomeText {
+	font-family: 'Roboto Slab', serif;
+}
+
+.bothPanels {
+	height: 100vh;
+}
+
+.mainPanel { 
+   height: 100%;
+}
+
+.titleBlock {
+	padding-bottom: 10px;
+}
+
+.showError {
+	background-image: url('../img/error.jpg');
+	width: 550px; 
+	 height: 350px;
+	background-size: 550px 350px;
+	margin: auto;
+}
+
+.albumArt {
+	 display:block;
+	 width: 125px; 
+	 height: 125px;
+	background-size: 125px 125px;
+    background-repeat: no-repeat;
+	text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
+	color: white;
+}
+
+.artistImage {
+	display:block;
+	width: 125px; 
+	height: 125px;
+	background-size: 125px 125px;
+    background-repeat: no-repeat;
+	text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
+	color: white;
+	margin: auto;
+}
+
+.imageText {
+	padding: 4px;
+}
+
+.mainPanel {
+
+}
+
+.topTenName {
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 20px;
+}
+
+.songCard {
+	padding: 0px;
+}
+
+.songTitle {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.topTenTitle {
+	font-weight: bold;
+	font-size: 12px;
+
+}
+
+.songArtist {
+	font-size: 14px;
+}
+
+.songAlbum {
+	font-size: 14px;
+}
+
+
+.addTo10 {
+	background-color: green;
+	margin: auto;
+}
+
+.searchButton {
+	background-color: black;
+	margin: auto;
+}
+
+.typeText {
+	font-weight: bold;
+	font-size: 30px;
+	width: 100%;
+}

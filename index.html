@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" ng-app="topTenSongs">
+<head>
+	<meta charset="utf-8">
+	<title>Spotify Top Songs</title>
+	<script src="node_modules/angular/angular.js"></script>
+	<link rel="stylesheet" href="assets/css/foundation.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body ng-controller="mainController">
+
+	<div class="row header-block">
+		<div class="small-12 large-12 columns">
+			<div class="row">
+				<div class="small-12 large-12 medium-12 columns" id="titleOfPage">
+					Spotify Top 10 Song List
+				</div>
+			</div>
+		</div>
+
+		<div class="small-12 large-12 columns">
+			<div class="row">
+				<div class="small-6 large-6 medium-6 columns">
+						<input type="text" ng-model="searchInput"  placeholder="{{inputText}}">
+				</div>
+				<div class="small-6 large-6 medium-6 columns">
+					<div class="small-12 large-12 columns">
+						<div class="row">
+							<div class="small-4 large-4 medium-4 columns">
+								<button type="button" class="button searchButton" ng-click="searchTrack();">Track</button>
+							</div>
+							<div class="small-4 large-4 medium-4 columns">
+								<button type="button" class="button  searchButton" ng-click="searchAlbum();">Album</button>
+							</div>
+							<div class="small-4 large-4 medium-4 columns">
+								<button type="button" class="button searchButton" ng-click="searchArtist();">Artist</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div ng-show="searchEmptyError" class="showError"  ng-cloak>
+		
+	</div>
+
+
+	<div class="small-12 columns mainPanel">
+		<div class="row songCard">
+			<div class="small-4 columns">
+				Top Ten Song List:<P>
+				<div ng-show="topTenList.title"  ng-cloak>
+					<span class="topTenName">{{topTenList.title}}</span>
+				</div>
+				<div ng-show="topTenList.songs == null || topTenList.songs.length == 0">
+					No Songs. Your Top Ten List is empty. Or, another way to look at is you have a top 0 list.
+				</div>
+				
+				<div ng-repeat="track in topTenList.songs">
+					<div class="row">
+
+						<div class="small-12 columns"  >
+							<div class="topTenTitle">{{track.artist}}: {{track.name}}</div>
+						</div>
+					</div>
+					<hr/  ng-cloak>
+				</div>
+				<div ng-hide="topTenList.songs == null || topTenList.songs.length == 0"  ng-cloak>
+					<a href="#/viewTopTen">
+						<button type="button" class="button addTo10" >View Top Ten List</button>
+					</a>
+				</div>
+	
+			</div>
+			<div class="small-8 columns">
+				<div id="main">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+ 
+	<script src="node_modules/angular-spotify/src/angular-spotify.js"></script>
+	<script src="node_modules/angular-route/angular-route.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="node_modules/file-saver/FileSaver.js"></script>
+    <script src="assets/lib/vendor/jquery.js"></script>
+    <script src="assets/lib/vendor/what-input.js"></script>
+    <script src="assets/lib/vendor/foundation.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/main-controller.js"></script>
+</body>
+</html>

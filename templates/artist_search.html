@@ -1,0 +1,41 @@
+<div class="small-12 columns mainPanel">
+			<div ng-hide="searchResults == null || searchResults.length == 0">
+				<span class="typeText">
+					Artists:
+					<span ng-hide="options.offset == 0">
+						<button type="button" class="button  nextButton" ng-click="searchPreviousArtists();" pull-right><<</button>
+					</span>
+					<button type="button" class="button  nextButton" ng-click="searchNextArtists();" pull-right>>></button>
+				</span>
+				<div ng-repeat="result in searchResults">
+						<div class="row songCard">
+							<div class="small-4 columns">
+								<span class="albumArt" style="background-image: url('{{result.images[0].url}}')">
+								</span>
+							</div>
+							<div class="small-8 columns">
+								<span>
+									<div class="media-details">
+										<div class="artistTitle">
+											<a href="#/searchArtistAlbums/{{result.id}}">{{result.name}}</a>
+										</div>
+									  <P>
+									</div>
+								</span>
+							</div>
+						</div>
+						<hr/>
+					</div>
+				</div>
+				<div ng-show="searchResults == null || searchResults.length == 0">
+					<span ng-hide="options.offset == 0">
+						<button type="button" class="button  nextButton" ng-click="searchPreviousArtists();" pull-right><<</button>
+					</span>
+					<P>
+					<div ng-show="topTenList.songs == null || topTenList.songs.length == 0">
+						No Songs found. Please try a different search string.
+					</div>
+				</div>
+
+					
+		</div>
