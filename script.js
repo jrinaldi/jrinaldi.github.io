@@ -9,5 +9,6 @@ function updateCount() {
 
 function saveCount() {
   originalCount = parseInt(document.getElementById('wordCountInput').value);
+  document.getElementById('originalCount').textContent = originalCount;
   document.getElementById('difference').textContent = 'Difference: ';
 }
