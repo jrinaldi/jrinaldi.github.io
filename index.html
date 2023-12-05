@@ -7,16 +7,23 @@
 </head>
 <body>
   <div class="container">
-    <h1>Word Count Tracker</h1>
-  <p>Welcome to the Word Count Tracker!</p>
-  <p>Enter your original word count in the input field below. As you make progress or updates, enter the new word count and click "Update" to see the difference from the original count. When you're finished, click "End" to save the new count as the new reference point.</p>
-  <p>The "Original Count" above will update only when you click "End," reflecting the latest count you've set as the starting point.</p>
-  <p>Enjoy tracking your word count!</p>
+    <div class="header">
+      <h1>Word Count Tracker</h1>
+    </div>
+    <div class="description">
+      <p>Welcome to the Word Count Tracker!</p>
+      <p>Enter your original word count in the input field below. As you make progress or updates, enter the new word count and click "Update" to see the difference from the original count. When you're finished, click "End" to save the new count as the new reference point.</p>
+      <p>The "Original Count" above will update only when you click "End," reflecting the latest count you've set as the starting point.</p>
+      <p>Enjoy tracking your word count!</p>
+    </div>
     <p>Original Count: <span id="originalCount">0</span></p>
     <input type="number" id="wordCountInput" placeholder="Enter word count">
     <button onclick="updateCount()">Update</button>
     <p id="difference">Difference: </p>
     <button onclick="saveCount()">End</button>
+    <div class="image-container">
+      <img src="bg.jpeg" alt="Word Count Tracker Image">
+    </div>
   </div>
 
   <script src="script.js"></script>
