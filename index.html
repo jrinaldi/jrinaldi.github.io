@@ -1,27 +1,19 @@
-<HTML>
-<HEAD>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-</HEAD>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Count Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
+  <div class="container">
+    <h1>Word Count Tracker</h1>
+    <input type="number" id="wordCountInput" placeholder="Enter word count">
+    <button onclick="updateCount()">Update</button>
+    <p id="difference">Difference: </p>
+    <button onclick="saveCount()">End</button>
+  </div>
 
-<img src="img/bc_banner_cropped.jpg" alt="Byte Club Banner" width="100%" >
-
-<div id="frontShow">
-	<div class="row">
-	  <div class="column" id="storeFront">
-		<img src="img/bc_front_slip.jpg" alt="Byte Club Front" width="100%" >
-	  </div>
-
-	  <div class="column" >
-		<div id="frontText">
-			<h2>
-			Programming bootcamp, game nights, hackathons, tech demos, lectures and screenings as well as some of the best pizza around. 
-			<P>
-			Coming soon....</h2>
-		</div>
-	  </div>
-	</div>
-</div>
-
+  <script src="script.js"></script>
 </body>
-</HTML>
+</html>
